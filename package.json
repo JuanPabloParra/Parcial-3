@@ -1,0 +1,32 @@
+{
+  "name": "myweb",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon app.js",
+    "start": "node app.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "mongoose": "^6.11.1",
+    "socket.io": "^4.6.1",
+    "socket.io-client": "^4.6.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JuanPabloParra/Parcial-3.git"
+  },
+  "bugs": {
+    "url": "https://github.com/JuanPabloParra/Parcial-3/issues"
+  },
+  "homepage": "https://github.com/JuanPabloParra/Parcial-3#readme"
+}
