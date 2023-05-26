@@ -34,25 +34,15 @@ const Message = mongoose.model('Message', messageSchema);
 // Crear una nueva instancia de Express
 const app = express();
 
+// Middleware para analizar el cuerpo de las solicitudes como JSON
+app.use(express.json());
+
 // Ruta para servir el archivo index.html
 app.get('/', (req, res) => {
   res.sendFile(path.resolve(__dirname, 'index.html'));
 });
 
-// Ruta para servir el archivo socket.io.js
-app.get('/socket.io/socket.io.js', (req, res) => {
-  res.sendFile(path.resolve(__dirname, 'node_modules', 'socket.io', 'client-dist', 'socket.io.js'));
-});
-
-// Ruta para servir el archivo app.js
-app.get('/app.js', (req, res) => {
-  res.sendFile(path.resolve(__dirname, 'app.js'));
-});
-
-// Middleware para analizar el cuerpo de las solicitudes como JSON
-app.use(express.json());
-
-// Configuración del servidor de express
+// Configuración del servidor de Express
 const server = app.listen(3000, () => {
   console.log('Servidor en ejecución en el puerto 3000');
 });
@@ -91,5 +81,4 @@ io.on('connection', (socket) => {
   });
 });
 
-// Exportar la instancia de 'io'
 module.exports = io;
